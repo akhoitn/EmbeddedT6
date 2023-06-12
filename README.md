@@ -1,5 +1,8 @@
 # Embedded-Interview
 
+<details>
+
+
 
 ## <summary>COMPILER</summary>
 
@@ -57,4 +60,5 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 - Khi nào dùng Union: Union có rất nhiều member và tại 1 thời điểm mình chỉ sử dụng 1 member trong đó thôi thì ta sẽ dùng Union (ví dụ: Khi mua lap, ta sẽ có nhiều hãng để lựa chọn, nhưng ta chỉ có thể chọn 1 hãng để mua).
 
+<details>
 </details>

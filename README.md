@@ -1,7 +1,9 @@
 # Embedded-Interview
-<details>
+
 
 ## <summary>COMPILER</summary>
+
+<details>
 
 Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao sang ngôn ngữ mà máy tính có thể hiểu được và quá trình này chia làm 4 giai đoạn:
 
@@ -14,9 +16,11 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 4. Giai đoạn Linker: file (.o) thành (.exe) (executable). Thực tế file (.exe) là 1 file nén gồm file source, file âm thanh, file hình ảnh, file thư viện nếu ứng dụng đó có. Chủ yếu giai đoạn này sẽ sắp xếp các file trên vào trong 1 file.
 <details>
 
-<details>
+
 
 ## <summary>STRUCT_UNION</summary>
+
+<details>
 
 ### 1. Struct
 - Sizeof của Struct bằng tổng các member cộng lại (+ padding nếu có).

@@ -12,13 +12,13 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 3. Giai đoạn Assembler: file (.s) sẽ thành (.o/ .obj) và libraries. Giai đoạn này sẽ tạo ra các file hệ thống ( âm thanh, đa phương tiện, icon).
 - Cú pháp: gcc -c main.s -o main.o
 4. Giai đoạn Linker: file (.o) thành (.exe) (executable). Thực tế file (.exe) là 1 file nén gồm file source, file âm thanh, file hình ảnh, file thư viện nếu ứng dụng đó có. Chủ yếu giai đoạn này sẽ sắp xếp các file trên vào trong 1 file.
-</details>
 
 
-</details>
+
+
 <summary>STRUCT_UNION</summary>
 
- 1. Struct
+## 1. Struct
 - Sizeof của Struct bằng tổng các member cộng lại (+ padding nếu có).
 - Địa chỉ của Struct sẽ bằng địa chỉ của member đầu tiên và các member còn lại sẽ có địa chỉ riêng của chúng nên chúng có thể lưu giá trị độc lập với nhau.
 - Khi nào dùng Struct: Struct cùng một thời điểm ta có thể chọn cùng lúc nhiều member.
@@ -34,7 +34,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/271d4a47-36fa-443b-b69f-c42e563a9e5d">
 </p> 
 
- 2. Union
+## 2. Union
 - Sizeof của Union là kích thước của member lớn nhất.
 
 <p align="center">

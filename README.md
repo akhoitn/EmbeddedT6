@@ -12,8 +12,9 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 3. Giai đoạn Assembler: file (.s) sẽ thành (.o/ .obj) và libraries. Giai đoạn này sẽ tạo ra các file hệ thống ( âm thanh, đa phương tiện, icon).
 - Cú pháp: gcc -c main.s -o main.o
 4. Giai đoạn Linker: file (.o) thành (.exe) (executable). Thực tế file (.exe) là 1 file nén gồm file source, file âm thanh, file hình ảnh, file thư viện nếu ứng dụng đó có. Chủ yếu giai đoạn này sẽ sắp xếp các file trên vào trong 1 file.
+</details>
 
-
+</details>
 <summary>STRUCT_UNION</summary>
 
 ## 1. Struct

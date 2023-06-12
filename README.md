@@ -2,6 +2,7 @@
 
 
 
+<details>
 
 ## <summary>COMPILER</summary>
 

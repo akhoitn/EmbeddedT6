@@ -4,7 +4,7 @@
 
 
 
-## <summary>COMPILER</summary>
+# <summary>COMPILER</summary>
 
 <details>
 
@@ -21,11 +21,11 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 
 
-## <summary>STRUCT_UNION</summary>
+# <summary>STRUCT_UNION</summary>
 
 <details>
 
-### 1. Struct
+## 1. Struct
 - Sizeof của Struct bằng tổng các member cộng lại (+ padding nếu có).
 - Địa chỉ của Struct sẽ bằng địa chỉ của member đầu tiên và các member còn lại sẽ có địa chỉ riêng của chúng nên chúng có thể lưu giá trị độc lập với nhau.
 - Khi nào dùng Struct: Struct cùng một thời điểm ta có thể chọn cùng lúc nhiều member.
@@ -41,7 +41,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/271d4a47-36fa-443b-b69f-c42e563a9e5d">
 </p> 
 
-### 2. Union
+## 2. Union
 - Sizeof của Union là kích thước của member lớn nhất.
 
 <p align="center">

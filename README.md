@@ -31,12 +31,12 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Khi nào dùng Struct: Struct cùng một thời điểm ta có thể chọn cùng lúc nhiều member.
 - Tùy cách sắp xếp các member trong Struct ta sẽ có sizeof khác nhau, chúng ta nên sắp xếp 1 cách thông minh để không tốn tài nguyên:
 
-   * Đây tiết kiệm tài nguyên.
+* Đây tiết kiệm tài nguyên.
 <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/77714d49-3cae-4862-bf51-9597a67abfdb">
 </p> 
 
-   * Đây là lãng phí tài nguyên
+* Đây là lãng phí tài nguyên
 <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/271d4a47-36fa-443b-b69f-c42e563a9e5d">
 </p> 

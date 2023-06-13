@@ -64,7 +64,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 ## <summary>POINTER</summary>
 
-1. Normal Pointer
+### 1. Normal Pointer
 - Con trỏ bth chỉ trỏ lưu được giá trị của địa chỉ cùng kiểu dữ liệu. 
 - Cách khai báo: 
     * Int value = 1; 0x01
@@ -73,18 +73,18 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
     * *0x01 = 1;
     * Printf(“Dia chi: %p”, ptr); = printf (“Dia chi: %p”, &a);
 
-2. Void Pointer
+### 2. Void Pointer
 - Có thể trỏ tới tất cả địa chỉ của các đối tượng khác ( khác kiểu dữ liệu).
 - Chỉ trỏ tới địa chỉ dữ liệu thôi, mún hiển thị giá trị của đối tượng thì ta phải ép kiểu cùng kiểu với kiểu dữ liệu của đối tượng.
 
-3. Null Pointer
+### 3. Null Pointer
 - Khi ta khai báo 1 con trỏ mà không gán địa chỉ cho nó, nó sẽ trỏ tới 1 địa chỉ rác nào đó. Lúc ta thay đổi giá trị cho nó thì chương trình sẽ bị lỗi.
 - Khi nào dùng con trỏ Null: khi ta khai báo 1 con trỏ mà ta ch sử dụng thì ta gán nó bằng Null hoặc khi sử dụng con trỏ xong và không muốn sử dụng nó nữa thì phải gán nó về con trỏ Null.
 
-4. Pointer hàm
+### 4. Pointer hàm
 - Là con trỏ trỏ đến vị trí của hàm. Nó có thể trỏ tới những hàm có kiểu trả về là kiểu void và tham số truyền vào của nó là kiểu int int or int char tùy vào hàm trỏ tới.
 - Cách khai báo: void (*ptr)(int, int)  
 
-5. Pointer to Pointer
+### 5. Pointer to Pointer
 - Là 1 con trỏ lưu địa chỉ của Pointer khác.
 - Kích thước con trỏ phụ thuộc vào kiến thức vi xử lí: máy tính xử dụng vi xử lí 64bit (8byte), 32 bit (4 byte)...

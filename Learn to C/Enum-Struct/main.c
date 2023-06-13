@@ -71,7 +71,7 @@ void Display (Visa visa, Month month){
     }
 }
 
-int main(int argc, char const *agrv)
+int main(int argc, char const *agrv[])
 {
     Visa visa;
     Month month = June;

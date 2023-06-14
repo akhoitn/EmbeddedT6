@@ -55,10 +55,13 @@ int main(int agrc, char const *argv[])
     printf("Gia tri: %.01f\n", *(double *)array[1]);
 
    // Gia tri  string
+
+    //Cach 1 printf("%s", (char*)array[2]);
+    //Cach 2:
     for(int i=0; i < strlen(string); i++)
     {
         printf("%c", *((char*)array[2]+i));
-    }
+    };
    
     
     return 0;

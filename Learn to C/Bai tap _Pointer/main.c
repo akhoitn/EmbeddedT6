@@ -22,12 +22,6 @@ void toanhoc(void(*ptr)(int,int), int a, int b){
     ptr(a,b);
     
 }
-/*void (*afptr[])(int,int) = {
-    &tong,
-    &hieu,
-    &tich,
-    &thuong,
-}*/
 
 
 
@@ -35,17 +29,25 @@ int main(int agrc, char const *argv[])
 {
     double d = 10.3;
     char string[] = "Hello";
+  
+    //((void (*)(void (*ptr)(int,int),int,int))toanhoc(6,6);
     
-    //void *ptr1 =&tong;
-    //((void (*)(int,int))ptr1)(6,6);
-    //toanhoc(&ptr1,6,6);
    
     void *array[]= {&toanhoc, &d, &string};
-    // Gia tri toanhoc
-    //printf("%d\n", (*array[0])(&hieu,6,6));
   
- 
+  
+    printf("Gia tri tong a & b: \n");
+   ((void (*)(void (*ptr)(int, int),int, int))array[0])(&tong,10,10);
+
+   printf("Gia tri hieu a & b: \n");
+   ((void (*)(void (*ptr)(int, int),int, int))array[0])(&hieu,10,10);
+
+   printf("Gia tri tich a & b: \n");
+   ((void (*)(void (*ptr)(int, int),int, int))array[0])(&tich,2,5);
+
+   printf("Gia tri thuong a & b: %.02f\n",((double (*)(double (*ptr)(int, int),int, int))array[0])(&thuong,17,3));
    
+
    // GIa tri d
     printf("Gia tri: %.01f\n", *(double *)array[1]);
    // Gia tri  string

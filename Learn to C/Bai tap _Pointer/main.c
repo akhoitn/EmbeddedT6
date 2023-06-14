@@ -42,6 +42,7 @@ int main(int agrc, char const *argv[])
     // Gia tri hieu
    printf("Gia tri hieu a & b: \n");
    ((void (*)(void (*ptr)(int, int),int, int))array[0])(&hieu,10,10);
+
     // Gia tri tich
    printf("Gia tri tich a & b: \n");
    ((void (*)(void (*ptr)(int, int),int, int))array[0])(&tich,2,5);
@@ -52,6 +53,7 @@ int main(int agrc, char const *argv[])
 
    // GIa tri d
     printf("Gia tri: %.01f\n", *(double *)array[1]);
+
    // Gia tri  string
     for(int i=0; i < strlen(string); i++)
     {

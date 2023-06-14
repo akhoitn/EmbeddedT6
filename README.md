@@ -76,9 +76,17 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
     * *0x01 = 1;
     * Printf(“Dia chi: %p”, ptr); = printf (“Dia chi: %p”, &a);
 
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/28436e18-a94e-4255-b248-93bfb4f8a201">
+</p>
+
 ### 2. Void Pointer
 - Có thể trỏ tới tất cả địa chỉ của các đối tượng khác ( khác kiểu dữ liệu).
 - Chỉ trỏ tới địa chỉ dữ liệu thôi, mún hiển thị giá trị của đối tượng thì ta phải ép kiểu cùng kiểu với kiểu dữ liệu của đối tượng.
+
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/d2dfeb7f-f3c3-4a46-99b5-f2e510342959">
+</p>
 
 ### 3. Null Pointer
 - Khi ta khai báo 1 con trỏ mà không gán địa chỉ cho nó, nó sẽ trỏ tới 1 địa chỉ rác nào đó. Lúc ta thay đổi giá trị cho nó thì chương trình sẽ bị lỗi.
@@ -87,6 +95,10 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 ### 4. Pointer hàm
 - Là con trỏ trỏ đến vị trí của hàm. Nó có thể trỏ tới những hàm có kiểu trả về là kiểu void và tham số truyền vào của nó là kiểu int int or int char tùy vào hàm trỏ tới.
 - Cách khai báo: void (*ptr)(int, int)  
+
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/6a08e506-b668-4972-af6d-82f43ca8c415">
+</p>
 
 ### 5. Pointer to Pointer
 - Là 1 con trỏ lưu địa chỉ của Pointer khác.

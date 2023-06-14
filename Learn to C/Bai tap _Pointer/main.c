@@ -35,16 +35,18 @@ int main(int agrc, char const *argv[])
    
     void *array[]= {&toanhoc, &d, &string};
   
-  
+    // Gia tri tong
     printf("Gia tri tong a & b: \n");
    ((void (*)(void (*ptr)(int, int),int, int))array[0])(&tong,10,10);
 
+    // Gia tri hieu
    printf("Gia tri hieu a & b: \n");
    ((void (*)(void (*ptr)(int, int),int, int))array[0])(&hieu,10,10);
-
+    // Gia tri tich
    printf("Gia tri tich a & b: \n");
    ((void (*)(void (*ptr)(int, int),int, int))array[0])(&tich,2,5);
 
+    // Gia tri thuong
    printf("Gia tri thuong a & b: %.02f\n",((double (*)(double (*ptr)(int, int),int, int))array[0])(&thuong,17,3));
    
 

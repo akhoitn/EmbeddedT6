@@ -92,7 +92,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Khi ta khai báo 1 con trỏ mà không gán địa chỉ cho nó, nó sẽ trỏ tới 1 địa chỉ rác nào đó. Lúc ta thay đổi giá trị cho nó thì chương trình sẽ bị lỗi.
 - Khi nào dùng con trỏ Null: khi ta khai báo 1 con trỏ mà ta ch sử dụng thì ta gán nó bằng Null hoặc khi sử dụng con trỏ xong và không muốn sử dụng nó nữa thì phải gán nó về con trỏ Null.
 
-### 4. Pointer hàm
+### 4. Function Pointer
 - Là con trỏ trỏ đến vị trí của hàm. Nó có thể trỏ tới những hàm có kiểu trả về là kiểu void và tham số truyền vào của nó là kiểu int int or int char tùy vào hàm trỏ tới.
 - Cách khai báo: void (*ptr)(int, int)  
 

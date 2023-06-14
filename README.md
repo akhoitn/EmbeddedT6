@@ -18,7 +18,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - `Cú pháp: gcc -c main.s -o main.o`
 4. Giai đoạn Linker: file (.o) thành (.exe) (executable). Thực tế file (.exe) là 1 file nén gồm file source, file âm thanh, file hình ảnh, file thư viện nếu ứng dụng đó có. Chủ yếu giai đoạn này sẽ sắp xếp các file trên vào trong 1 file.
 
-<details>
+
 
 <details>
 
@@ -61,7 +61,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 - Khi nào dùng Union: Union có rất nhiều member và tại 1 thời điểm mình chỉ sử dụng 1 member trong đó thôi thì ta sẽ dùng Union (ví dụ: Khi mua lap, ta sẽ có nhiều hãng để lựa chọn, nhưng ta chỉ có thể chọn 1 hãng để mua).
 
-<details>
+
 
 <details>
 
@@ -92,4 +92,3 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Là 1 con trỏ lưu địa chỉ của Pointer khác.
 - Kích thước con trỏ phụ thuộc vào kiến thức vi xử lí: máy tính xử dụng vi xử lí 64bit (8byte), 32 bit (4 byte)...
 
-<details>

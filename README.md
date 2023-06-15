@@ -144,8 +144,8 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Sẽ được giải phóng khi gọi hàm free,…
 
 ### 6. Dynamic & Static Array
-- Static Array:
-  <p align="center">
+####  Static Array:
+   <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/8cfd495d-7e83-4e54-ab57-4c1b62fa7e17">  
   </p>
   <p align="center">
@@ -157,24 +157,28 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
   <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/6f50299e-3f3c-4a7d-8bf5-3a9af05e72a9">
   </p>
-    - Khi khai báo thì mảng sẽ có kích thước cố định.
-    - Bản chất của mảng array là những địa chỉ liền kề với nhau, nên khi có địa chỉ đầu tiên ta sẽ có thể biết những địa chỉ tiếp theo
-    - Tùy theo kiểu dữ liệu thì địa chỉ liền kề sẽ khác nhau. Như ví dụ trên: khi kiểu dữ liệu là uint8_t (1 byte) thì các địa chỉ sẽ cách nhau 1 byte, còn uint16_t (2 byte) thì sẽ cách 2 byte,....
-- Dynamic Array:
+
+  - Khi khai báo thì mảng sẽ có kích thước cố định.
+  - Bản chất của mảng array là những địa chỉ liền kề với nhau, nên khi có địa chỉ đầu tiên ta sẽ có thể biết những địa chỉ tiếp theo
+  - Tùy theo kiểu dữ liệu thì địa chỉ liền kề sẽ khác nhau. Như ví dụ trên: khi kiểu dữ liệu là uint8_t (1 byte) thì các địa chỉ sẽ cách nhau 1 byte, còn uint16_t (2 byte) thì sẽ cách 2 byte,....
+#### Dynamic Array:
   <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/d819920d-779c-47cc-9cb8-730eee8fc323">
   </p>
   <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/75a7c3b8-5601-46ee-8829-923be985effe">
   </p>
+
   - là mảng và kích thước có thể thay đổi được
   - Trả lại địa chỉ đầu tiên được lưu vào con trỏ *array
   - Malloc để tạo mảng, Realloc để thay đổi kích thước mảng.
+
   <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/515fa9d9-05c6-46a3-a579-7c39123ceacf">
   </p>
   <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/dc8bd287-6a40-44c9-94dc-22be53a7ca66">
   </p>
+
   - Giải thích: Static array thì lưu ở Stack nên khi chạy hết ct thì sẽ tự thu hồi vùng nhớ, nên khi gọi lần 2 thì sẽ dùng lại vùng nhớ kia trên RAM. Còn Dynamic array thì lưu trên vùng nhớ Heap, không tự thu hồi vùng nhớ nên khi gọi lại lần 2 thì vùng nhớ kia đã sử dụng rồi nên phải dùng vùng nhớ khác.
   - Do đó khi dùng Dynamic array thì phải nhớ giải phóng vùng nhớ. Dùng free(array) thì sẽ dùng lại được vùng nhớ cũ.

@@ -104,3 +104,51 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Là 1 con trỏ lưu địa chỉ của Pointer khác.
 - Kích thước con trỏ phụ thuộc vào kiến thức vi xử lí: máy tính xử dụng vi xử lí 64bit (8byte), 32 bit (4 byte)...
 
+<details>
+
+## <summary>Memory Layout</summary>
+
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/277d905a-1347-49d5-b917-c6318804c1c5">
+</p>
+
+### 1. Text
+- Quyền truy cập chỉ Read và nó chưa lệnh để thực thi nên tránh sửa đổi instruction.
+- Chứa khai báo hằng số trong chương trình (.rodata) (chỉ đọc chứ không cho sửa đổi).
+- Khi ta viết chương trình file .hex, nạp cho vi điều khiển, file hex nạp vào bộ nhớ FLASH, khi chương trình chạy sẽ copy chương trình ở bộ nhớ Flash, dán vào bộ nhớ RAM ( lưu ở phân vùng Text)
+
+### 2. Data
+- Quyền truy cập là read-write.
+- Chứa biến toàn cục or biến static (bao gồm static toàn cục và cục bộ) với giá trị khởi tạo khác không.
+- Được giải phóng khi kết thúc chương trình.
+
+### 3. BSS
+- Quyền truy cập là read-write.
+- Chứa biến toàn cục or biến static (bao gồm static toàn cục và cục bộ) với giá trị khởi tạo bằng không or không khởi tạo.
+- Được giải phóng khi kết thúc chương trình. 
+
+### 4. Stack
+- Quyền truy cập là read-write.
+- Được sử dụng cấp phát cho biến local, input parameter của hàm,…
+- Sẽ được giải phóng khi ra khỏi block code/hàm.
+
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/a5e533e1-a739-4001-b19f-c8055b75521f">
+</p>
+
+  - Lưu ý: Khi nào ta chỉ muốn đọc thông tin giá trị truyền vào thì ta dùng khai báo biến, còn ta muốn thay đổi giá trị biến ta truyền vào thì ta dùng khai báo con trỏ.
+
+### 5. Heap
+- Quyền truy cập là read-write.
+- Được sử dụng để cấp phát bộ nhớ động như: Malloc, Calloc,…
+- Sẽ được giải phóng khi gọi hàm free,…
+
+### 6. Dynamic & Static Array
+
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/8cfd495d-7e83-4e54-ab57-4c1b62fa7e17, https://github.com/akhoitn/Test-1/assets/128330556/0b75de14-bc16-4975-82fb-f38bb52343ee">  
+</p>
+<p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/0b75de14-bc16-4975-82fb-f38bb52343ee">
+</p>
+

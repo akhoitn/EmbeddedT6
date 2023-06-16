@@ -197,7 +197,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
         <img src="https://github.com/akhoitn/Test-1/assets/128330556/e96eb8a3-0f7b-4470-8ffe-8ef1a0a2b60b">
          </p>
       - Heap: Nếu bạn liên tục cấp phát vùng nhớ mà không giải phóng thì sẽ bị lỗi tràn vùng nhớ Heap (Heap overflow).
-        - Nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại.
+      - Nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại.
       - Ví dụ trường hợp khởi tạo vùng nhớ Heap quá lớn:
           <p align="center">
           <img src="https://github.com/akhoitn/Test-1/assets/128330556/e96eb8a3-0f7b-4470-8ffe-8ef1a0a2b60b">

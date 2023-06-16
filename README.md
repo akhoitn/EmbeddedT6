@@ -1,7 +1,7 @@
 # Embedded-Interview
 <details>
 
-## <summary>COMPILER</summary>
+<summary>COMPILER</summary>
 Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao sang ngôn ngữ mà máy tính có thể hiểu được và quá trình này chia làm 4 giai đoạn:
 
 1. Giai đoạn tiền xử lý (pre-processor): file (.c .h .hpp .cpp) khi đi qua giai đoạn này sẽ biến thành file (.i) (preprocessed source). Tại đây sẽ các source của thư viện include trong main.c sẽ được đem vào, xóa bỏ comment, thay thế các đoạn chương trình, các biến mà marco định nghĩa.
@@ -17,7 +17,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 <details>
   
-## <summary>STRUCT_UNION</summary>
+<summary>STRUCT_UNION</summary>
 
 
 
@@ -60,7 +60,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 <details>
 
-## <summary>POINTER</summary>
+<summary>POINTER</summary>
 
 ### 1. Normal Pointer
 - Con trỏ bth chỉ trỏ lưu được giá trị của địa chỉ cùng kiểu dữ liệu. 
@@ -103,7 +103,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
  
 <details>
 
-## <summary>Memory Layout</summary>
+<summary>Memory Layout</summary>
 
 <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/277d905a-1347-49d5-b917-c6318804c1c5">

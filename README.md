@@ -1,13 +1,7 @@
 # Embedded-Interview
-
-
-
 <details>
 
-## <summary>COMPILER</summary>
-
-
-
+<summary>COMPILER</summary>
 Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao sang ngôn ngữ mà máy tính có thể hiểu được và quá trình này chia làm 4 giai đoạn:
 
 1. Giai đoạn tiền xử lý (pre-processor): file (.c .h .hpp .cpp) khi đi qua giai đoạn này sẽ biến thành file (.i) (preprocessed source). Tại đây sẽ các source của thư viện include trong main.c sẽ được đem vào, xóa bỏ comment, thay thế các đoạn chương trình, các biến mà marco định nghĩa.
@@ -19,10 +13,11 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 4. Giai đoạn Linker: file (.o) thành (.exe) (executable). Thực tế file (.exe) là 1 file nén gồm file source, file âm thanh, file hình ảnh, file thư viện nếu ứng dụng đó có. Chủ yếu giai đoạn này sẽ sắp xếp các file trên vào trong 1 file.
 
 
+</details>
 
 <details>
-
-## <summary>STRUCT_UNION</summary>
+  
+<summary>STRUCT_UNION</summary>
 
 
 
@@ -61,11 +56,11 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 - Khi nào dùng Union: Union có rất nhiều member và tại 1 thời điểm mình chỉ sử dụng 1 member trong đó thôi thì ta sẽ dùng Union (ví dụ: Khi mua lap, ta sẽ có nhiều hãng để lựa chọn, nhưng ta chỉ có thể chọn 1 hãng để mua).
 
-
+</details>
 
 <details>
 
-## <summary>POINTER</summary>
+<summary>POINTER</summary>
 
 ### 1. Normal Pointer
 - Con trỏ bth chỉ trỏ lưu được giá trị của địa chỉ cùng kiểu dữ liệu. 
@@ -104,9 +99,11 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Là 1 con trỏ lưu địa chỉ của Pointer khác.
 - Kích thước con trỏ phụ thuộc vào kiến thức vi xử lí: máy tính xử dụng vi xử lí 64bit (8byte), 32 bit (4 byte)...
 
+</details>
+ 
 <details>
 
-## <summary>Memory Layout</summary>
+<summary>MEMORY LAYOUT</summary>
 
 <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/277d905a-1347-49d5-b917-c6318804c1c5">
@@ -182,3 +179,10 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
   - Giải thích: Static array thì lưu ở Stack nên khi chạy hết ct thì sẽ tự thu hồi vùng nhớ, nên khi gọi lần 2 thì sẽ dùng lại vùng nhớ kia trên RAM. Còn Dynamic array thì lưu trên vùng nhớ Heap, không tự thu hồi vùng nhớ nên khi gọi lại lần 2 thì vùng nhớ kia đã sử dụng rồi nên phải dùng vùng nhớ khác.
   - Do đó khi dùng Dynamic array thì phải nhớ giải phóng vùng nhớ. Dùng free(array) thì sẽ dùng lại được vùng nhớ cũ.
+ 
+ ### 7. Stack & Heap summary
+  - Bộ nhớ Heap và bộ nhớ Stack bản chất đều cùng là vùng nhớ được tạo ra và lưu trữ trong RAM khi chương trình được thực thi.
+  - Bộ nhớ Stack được dùng để lưu trữ các biến cục bộ trong hàm, tham số truyền vào... Truy cập vào bộ nhớ này rất nhanh và được thực thi khi chương trình được biên dịch.
+  - Bộ nhớ Heap được dùng để lưu trữ vùng nhớ cho những biến con trỏ được cấp phát động bởi các hàm malloc - calloc - realloc (trong C).
+ 
+  </details>

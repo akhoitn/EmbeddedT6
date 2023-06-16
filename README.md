@@ -202,6 +202,6 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
           <p align="center">
           <img src="https://github.com/akhoitn/Test-1/assets/128330556/e96eb8a3-0f7b-4470-8ffe-8ef1a0a2b60b">
          </p>
-          - `int *A = (int *)malloc(18446744073709551615);`
+         - `int *array= (int*)malloc(128312319823018908)`
  
   </details>

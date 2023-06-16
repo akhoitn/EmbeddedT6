@@ -179,5 +179,10 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
   - Giải thích: Static array thì lưu ở Stack nên khi chạy hết ct thì sẽ tự thu hồi vùng nhớ, nên khi gọi lần 2 thì sẽ dùng lại vùng nhớ kia trên RAM. Còn Dynamic array thì lưu trên vùng nhớ Heap, không tự thu hồi vùng nhớ nên khi gọi lại lần 2 thì vùng nhớ kia đã sử dụng rồi nên phải dùng vùng nhớ khác.
   - Do đó khi dùng Dynamic array thì phải nhớ giải phóng vùng nhớ. Dùng free(array) thì sẽ dùng lại được vùng nhớ cũ.
-  
+ 
+ ### 7. Stack & Heap summary
+  - Bộ nhớ Heap và bộ nhớ Stack bản chất đều cùng là vùng nhớ được tạo ra và lưu trữ trong RAM khi chương trình được thực thi.
+  - Bộ nhớ Stack được dùng để lưu trữ các biến cục bộ trong hàm, tham số truyền vào... Truy cập vào bộ nhớ này rất nhanh và được thực thi khi chương trình được biên dịch.
+  - Bộ nhớ Heap được dùng để lưu trữ vùng nhớ cho những biến con trỏ được cấp phát động bởi các hàm malloc - calloc - realloc (trong C).
+ 
   </details>

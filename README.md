@@ -114,12 +114,12 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 - Chứa khai báo hằng số trong chương trình (.rodata) (chỉ đọc chứ không cho sửa đổi).
 - Khi ta viết chương trình file .hex, nạp cho vi điều khiển, file hex nạp vào bộ nhớ FLASH, khi chương trình chạy sẽ copy chương trình ở bộ nhớ Flash, dán vào bộ nhớ RAM ( lưu ở phân vùng Text)
 
-### 2. Data
+### 2. Data (Initialized Data)
 - Quyền truy cập là read-write.
 - Chứa biến toàn cục or biến static (bao gồm static toàn cục và cục bộ) với giá trị khởi tạo khác không.
 - Được giải phóng khi kết thúc chương trình.
 
-### 3. BSS
+### 3. BSS (Uninitialized Data)
 - Quyền truy cập là read-write.
 - Chứa biến toàn cục or biến static (bao gồm static toàn cục và cục bộ) với giá trị khởi tạo bằng không or không khởi tạo.
 - Được giải phóng khi kết thúc chương trình. 
@@ -197,12 +197,12 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
         <img src="https://github.com/akhoitn/Test-1/assets/128330556/e96eb8a3-0f7b-4470-8ffe-8ef1a0a2b60b">
          </p>
       - Heap: Nếu bạn liên tục cấp phát vùng nhớ mà không giải phóng thì sẽ bị lỗi tràn vùng nhớ Heap (Heap overflow).
-      - Nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại.
+        - Nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại.
       - Ví dụ trường hợp khởi tạo vùng nhớ Heap quá lớn:
           <p align="center">
           <img src="https://github.com/akhoitn/Test-1/assets/128330556/e96eb8a3-0f7b-4470-8ffe-8ef1a0a2b60b">
          </p>
-         
+
 - `int *array= (int*)malloc(128312319823018908)`
  
   </details>

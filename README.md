@@ -103,7 +103,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
  
 <details>
 
-<summary>Memory Layout</summary>
+<summary>MEMORY LAYOUT</summary>
 
 <p align="center">
   <img src="https://github.com/akhoitn/Test-1/assets/128330556/277d905a-1347-49d5-b917-c6318804c1c5">

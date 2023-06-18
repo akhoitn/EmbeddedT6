@@ -204,4 +204,26 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
 - `int *array= (int*)malloc(128312319823018908)`
  
+ </details>
+
+<details>
+
+<summary>STATIC_EXTERN_VOLATILE</summary>
+
+### 1. Static
+- Static cục bộ (Local): chỉ khởi tạo 1 lần duy nhất, tồn tại hết vòng đời của chương trình và giá trị có thể tích lũy được.
+- Static toàn cục (Global): những biến, hàm, mảng chỉ có giá trị trong 1 file nó được khai báo bằng Static, các file khác không thể truy cập được.
+    - Ứng dụng: Khi viết ct lớn sẽ có nhiều chương trình nhỏ, các hàm quá trình tạo ra ct đó phải là hàm Static, chỉ có nội bộ trong file, nếu ng khác muốn sử dụng thì chỉ đc phép nhập các giá trị và lấy kết quả. Quá trình xử lí tạo ra kết quả thì không được can thiệp.
+
+### 2. Extern
+-	Nó là tham chiếu của 1 biến, 1 hàm cùng tên nào đó đã được định nghĩa bên ngoài. Nó chỉ được khai báo chứ không đc gán giá trị.
+-	Biến được tham chiếu sẽ ở cấp độ cao nhất là toàn cục. Và có thể nằm trong các file khác.
+-	Để sử dụng được biến toàn cục ở file khác, ta phải khai báo thêm từ khóa extern phía trước.
+- Cách build: `gcc main.c "file muốn build" -o main` và chạy ct: `./main`
+
+### 3. Volatile
+- Compiler có chế độ tối ưu (optimizing) chương trình để tăng tốc độ của chương trình lên, sẽ bỏ qua các lệnh lặp, không thay đổi giá trị làm tốn tài nguyên. Nhưng trong 1 số trường hợp thì giá trị có thay đổi nhưng Compiler không nhận thấy và tối ưu lệnh đó khiến kết quả sai.
+- Khi đó ta sẽ dùng keyword Voltatile: thông báo cho Compiler không được tối ưu biến or hàm có keyword đó.
+- Ứng dụng: các lệnh, biến, hàm có thay đổi dữ liệu đột ngột or không biết trước. 
+
   </details>

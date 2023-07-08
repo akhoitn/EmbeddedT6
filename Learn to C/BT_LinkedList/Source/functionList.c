@@ -125,7 +125,7 @@ void erase (node **array, int pos)
         free(current);
         current = NULL;
     }else {
-        while (pos != 1)
+        while (pos != 0)
         {
             previous = current;
             current = current -> next;

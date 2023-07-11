@@ -1,5 +1,5 @@
-#ifndef funcList_h
-#define funcList_h
+#ifndef list_h
+#define list_h
 
 #include <stdio.h>
 #include <stdlib.h>

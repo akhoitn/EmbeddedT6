@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../Header/funcList.h"
+#include "../Header/list.h"
 
 int main(int argc, char const* argv[])
 {

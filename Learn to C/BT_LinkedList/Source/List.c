@@ -4,8 +4,7 @@
 * Date: 07/07/2023
 * Description: This is a header file contain functions for single linked  list
 */
-#include "../Header/funcList.h"
-#include <stdint.h>
+#include "../Header/list.h"
 
 /*
 * Function: createNode
@@ -125,7 +124,7 @@ void erase (node **array, int pos)
         free(current);
         current = NULL;
     }else {
-        while (pos != 1)
+        while (pos != 0)
         {
             previous = current;
             current = current -> next;

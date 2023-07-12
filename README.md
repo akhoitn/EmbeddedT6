@@ -247,9 +247,9 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
 
   </details>
 
-  <details>
+<details>
 
-  <summary>CLASS</summary>
+<summary>CLASS</summary>
 
 ### 1. Class
 
@@ -298,4 +298,4 @@ lúc định nghĩa class và định nghĩa thi hành bên ngoài class.
 - Đối với function, sau khi thực hiện xong khối lệnh và thoát thì biến tĩnh vẫn không mất đi.
 - Đối với class, khai báo nhiều object mỗi thuộc tính của object sẽ khác nhau nhưng static member vẫn sẽ là thuộc tính dùng chung cho tất cả các đối tượng của class đó.
 
-     </details>
+</details>

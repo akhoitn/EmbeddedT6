@@ -273,7 +273,7 @@ Quá trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc 
     tiếp thông qua instance của class đó. Các thuộc tính nên khai báo là public
     nếu bạn không có ràng buộc điều kiện trước khi gán (người dùng có thể
     thoải mái gán giá trị) hoặc bạn không cần xử lý trước khi trả về giá trị thuộc
-    tính;
+    tính.
   - Các thuộc tính private thường được sử dụng khi bạn không mong muốn
     người khác có thể tùy ý gán giá trị hoặc là bạn muốn xử lý trước khi trả về
     giá trị.

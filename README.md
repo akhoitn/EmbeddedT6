@@ -299,3 +299,37 @@ lúc định nghĩa class và định nghĩa thi hành bên ngoài class.
 - Đối với class, khai báo nhiều object mỗi thuộc tính của object sẽ khác nhau nhưng static member vẫn sẽ là thuộc tính dùng chung cho tất cả các đối tượng của class đó.
 
 </details>
+
+<details>
+
+<summary>OOP</summary>
+
+### 1. 4 thuộc tính OOP:
+Có 4 đặc tính quan trọng của lập trình hướng đối tượng trong C++ mà chúng ta cần 
+nắm vững:
+#### 1. Inheritance (Tính kế thừa)
+- Một class có thể kế thừa các thuộc tính của class đã tồn tại trước đó.
+- Khi một class con được tạo ra bởi việc kế thừa thuộc tính của class cha thì chúng ta 
+  sẽ gọi class con đó là subclass trong C++, và class cha chính là superclass trong 
+  C++.
+    <p align="center">
+    <img src="https://github.com/akhoitn/Test-1/assets/128330556/88414c8b-bd24-4648-a36c-85bcf9a8f73e">
+    </p>
+    <p align="center">
+    <img src="https://github.com/akhoitn/Test-1/assets/128330556/180f19d3-3e9a-4b30-a752-3ffc3d5beadb">
+    </p>
+#### 2. Encapsulation (Tính đóng gói) 
+- Không cho phép người sử dụng các đối tượng thay đổi property của một đối tượng.
+- Chúng ta chỉ được phép trỏ tới các method mà ta qui định, không trỏ tới được property.
+- Dữ liệu và thông tin sẽ được đóng gói lại, giúp các tác động bên 
+  ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn 
+  vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
+#### 3. Abstraction (Tính trừu tượng) 
+- là một khả năng mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông 
+  tin cần xử lý.
+- Ta có thể xử lý một đối tượng bằng cách gọi tên một phương thức và thu về kết quả xử lý, mà không cần biết làm cách nào
+  đối tượng đó được các thao tác trong class.
+#### 4. Polymorphism (Tính đa hình)
+- Một khả năng mà một phương thức trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy 
+  thuộc vào dữ liệu được xử lý.
+</details>

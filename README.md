@@ -333,3 +333,81 @@ nắm vững:
 - Một khả năng mà một phương thức trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy 
   thuộc vào dữ liệu được xử lý.
 </details>
+
+<details>
+
+<summary>Template</summary>
+
+- Template (khuôn mẫu) là một từ khóa trong C++, và là một kiểu dữ liệu trừu tượng tổng quát hóa cho các kiểu dữ liệu    int, float, double, bool...
+- Template trong C++ có 2 loại đó là function template & class template.
+- Template giúp người lập trình định nghĩa tổng quát cho hàm và lớp thay vì 
+phải nạp chồng (overloading) cho từng hàm hay phương thức với những kiểu 
+dữ liệu khác nhau.
+
+  <p align="center">
+  <img src="https://github.com/akhoitn/Test-1/assets/128330556/17fdf521-65d8-4bef-b983-388bf819a254">
+  </p>
+
+</details>
+
+<details>
+
+<summary>Namspace</summary>
+
+- Tình huống:
+    - Khi đang lập trình trong một file A bạn include 2 file B và C, nhưng 2 file này có cùng định nghĩa một hàm function() giống nhau về tên và tham số truyền vào, nhưng xử lý của mỗi hàm ở mỗi file là khác nhau, vấn đề đặt ra là code làm sao để trình biên dịch hiểu được khi nào bạn muốn gọi function của file B, khi nào bạn muốn gọi function của file C. Khi gọi hàm function() ở file A, trình biên dịch sẽ không biết được hàm function() bạn muốn gọi là hàm được định nghĩa ở file B hay file C. Vì vậy trình biên dịch chương trình sẽ báo lỗi.
+- Định nghĩa:
+    - Namespace là từ khóa trong C++ được sử dụng để định nghĩa một phạm vi nhằm mục đích phân biệt các hàm, lớp, biến, ... cùng tên trong các thư viện khác nhau.
+
+</details>
+
+<details>
+
+<summary>Virtual function</summary>
+
+- Hàm ảo (virtual function) là một hàm thành viên trong lớp cha mà lớp con 
+khi kế thừa cần phải định nghĩa lại.
+
+- Hàm ảo được sử dụng trong lớp cha khi cần đảm bảo hàm ảo đó sẽ được định 
+nghĩa lại trong lớp con. Việc này rất cần thiết trong trường hợp con trỏ có 
+kiểu là lớp cha trỏ đến đối tượng của lớp con.
+
+- Hàm ảo quan trọng thể hiện tính đa hình trong kế thừa (C++).
+
+- Note: Con trỏ của lớp cha có thể chứa địa chỉ của đối tượng thuộc lớp con nhưng ngược lại thì không được
+
+- Hàm ảo chỉ khác hàm bình thường khi được gọi từ một con trỏ.
+
+- Khi nào sử dụng hàm ảo, ta sử dụng hàm ảo khi muốn ct sẽ cho sử dụng thuộc tính overriding(ghi đè) load lại method mới nhất. Thuộc tính này sẽ được gọi là overload.
+
+
+</details>
+
+<details>
+
+<summary>Vector</summary>
+
+- Giống như là mảng (array), vector trong C++ là một đối tượng dùng để chứa các đối tượng khác, và các đối tượng được chứa này cũng được lưu trữ một cách liên tiếp trong vector.
+- Tuy nhiên, nếu như số lượng phần tử (size) của một mảng là cố định, thì ở vector, nó hoàn toàn có thể thay đổi trong suốt quá trình làm việc của chương trình
+Modifiers
+1. push_back(): Hàm đẩy một phần tử vào vị trí sau cùng của vector. Nếu kiểu của 
+đối tượng được truyền dưới dạng tham số trong push_back() không giống với kiểu 
+của vector thì sẽ bị ném ra.
+ten-vector.push_back(ten-cua-phan-tu);
+2. assign(): Nó gán một giá trị mới cho các phần tử vector bằng cách thay thế các 
+giá trị cũ.
+ten-vector.assign(int size, int value);
+3. pop_back(): Hàm pop_back () được sử dụng để xóa đi phần tử cuối cùng một 
+vector.
+4. insert(): Hàm này chèn các phần tử mới vào trước phần tử trước vị trí được trỏ 
+bởi vòng lặp. Chúng ta cũng có thể chuyển một số đối số thứ ba, đếm số lần phần tử 
+được chèn vào trước vị trí được trỏ.
+5. erase(): Hàm được sử dụng để xóa các phần tử tùy theo vị trí vùng chứa
+6. emplace(): Nó mở rộng vùng chứa bằng cách chèn phần tử mới vào
+7. emplace_back(): Nó được sử dụng để chèn một phần tử mới vào vùng chứa 
+vector, phần tử mới sẽ được thêm vào cuối vector
+8. swap(): Hàm được sử dụng để hoán đổi nội dung của một vector này với một 
+vector khác cùng kiểu. Kích thước có thể khác nhau.
+9. clear(): Hàm được sử dụng để loại bỏ tất cả các phần tử của vùng chứa vector
+
+</details>

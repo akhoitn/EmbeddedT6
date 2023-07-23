@@ -336,7 +336,7 @@ nắm vững:
 
 <details>
 
-<summary>Template</summary>
+<summary>TEMPLATE</summary>
 
 - Template (khuôn mẫu) là một từ khóa trong C++, và là một kiểu dữ liệu trừu tượng tổng quát hóa cho các kiểu dữ liệu    int, float, double, bool...
 - Template trong C++ có 2 loại đó là function template & class template.
@@ -352,7 +352,7 @@ dữ liệu khác nhau.
 
 <details>
 
-<summary>Namspace</summary>
+<summary>NAMESPACE</summary>
 
 - Tình huống:
     - Khi đang lập trình trong một file A bạn include 2 file B và C, nhưng 2 file này có cùng định nghĩa một hàm function() giống nhau về tên và tham số truyền vào, nhưng xử lý của mỗi hàm ở mỗi file là khác nhau, vấn đề đặt ra là code làm sao để trình biên dịch hiểu được khi nào bạn muốn gọi function của file B, khi nào bạn muốn gọi function của file C. Khi gọi hàm function() ở file A, trình biên dịch sẽ không biết được hàm function() bạn muốn gọi là hàm được định nghĩa ở file B hay file C. Vì vậy trình biên dịch chương trình sẽ báo lỗi.
@@ -363,7 +363,7 @@ dữ liệu khác nhau.
 
 <details>
 
-<summary>Virtual function</summary>
+<summary>VIRTUAL FUNCTIONE</summary>
 
 - Hàm ảo (virtual function) là một hàm thành viên trong lớp cha mà lớp con 
 khi kế thừa cần phải định nghĩa lại.
@@ -385,7 +385,7 @@ kiểu là lớp cha trỏ đến đối tượng của lớp con.
 
 <details>
 
-<summary>Vector</summary>
+<summary>VECTOR</summary>
 
 - Giống như là mảng (array), vector trong C++ là một đối tượng dùng để chứa các đối tượng khác, và các đối tượng được chứa này cũng được lưu trữ một cách liên tiếp trong vector.
 - Tuy nhiên, nếu như số lượng phần tử (size) của một mảng là cố định, thì ở vector, nó hoàn toàn có thể thay đổi trong suốt quá trình làm việc của chương trình

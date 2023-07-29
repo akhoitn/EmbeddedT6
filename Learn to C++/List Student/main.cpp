@@ -36,9 +36,14 @@ public:
     Student(string name, int age, string sex, double math, double physical, double chemistry);
     void editInf(string name, int age, string sex, double math, double physical, double chemistry);
     void display();
-    int displayID();
-    string displayName();
-    double displayTB();
+    int getID();
+    string getName();
+    double getTB();
+    void editInf();
+    void delSv();
+    void addNewSv();
+    void searchName();
+    void displayList();
 };
 
 Student::Student(string name, int age, string sex, double math, double physical, double chemistry)
@@ -103,17 +108,17 @@ void Student::display()
     cout << "GPA: " << GPA << endl;
     cout << "Rank: " << tp << endl;
 }
-int Student::displayID()
+int Student::getID()
 {
     return ID;
 }
 
-string Student::displayName()
+string Student::getName()
 {
     return NAME;
 }
 
-double Student::displayTB()
+double Student::getTB()
 {
     return GPA;
 }
@@ -215,7 +220,7 @@ void update(list<Student> &database)
 
     for (auto up = database.begin(); up != database.end(); up++)
     {
-        if (up->displayID() == id)
+        if (up->getID() == id)
         {
             do
             {
@@ -274,7 +279,7 @@ void delSv(list<Student> &database)
 
     for (auto up = database.begin(); up != database.end(); up++)
     {
-        if (up->displayID() == id)
+        if (up->getID() == id)
         {
             database.erase(up);
             i++;
@@ -299,7 +304,7 @@ void searchName(list<Student> &database)
 
     for (auto up = database.begin(); up != database.end(); up++)
     {
-        if (up->displayName() == name)
+        if (up->getName() == name)
         {
             up->display();
             i++;
@@ -310,7 +315,8 @@ void searchName(list<Student> &database)
         cout << "\t\tNot found: " << name << endl;
     }
 }
-void sortByName();
+void sortByName(list<Student>&database);
+
 void sortByGPA();
 void displayList(list<Student> &database)
 {

@@ -25,28 +25,35 @@ private:
     int ID;
     string NAME;
     int AGE;
-    string SEX;
-    TypeRank RANK;
     double MATH;
     double CHEMISTRY;
     double PHYSICAL;
     double GPA;
+    TypeRank RANK;
+    TypeSex SEX;
+    void cal_GPA_Rank();
 
 public:
-    Student(string name, int age, string sex, double math, double physical, double chemistry);
-    void editInf(string name, int age, string sex, double math, double physical, double chemistry);
-    void display();
+    Student(string name, int age, TypeSex sex, double math, double physical, double chemistry);
     int getID();
+    void setName(string name);
     string getName();
-    double getTB();
-    void editInf();
-    void delSv();
-    void addNewSv();
-    void searchName();
-    void displayList();
+    void setAge(int age);
+    int getAge();
+    void setMath(double math);
+    double getMath();
+    void setPhysical(double physical);
+    double getPhysical();
+    void setChemistry(double chemistry);
+    double getChemistry();
+    void setSex();
+    double getGPA();
+    void setRank();
+    TypeRank getRank();
+    TypeSex getSex();
 };
 
-Student::Student(string name, int age, string sex, double math, double physical, double chemistry)
+Student::Student(string name, int age, TypeSex sex, double math, double physical, double chemistry)
 {
     static int id = 100;
     ID = id;
@@ -57,90 +64,102 @@ Student::Student(string name, int age, string sex, double math, double physical,
     MATH = math;
     CHEMISTRY = chemistry;
     PHYSICAL = physical;
-
-    GPA = (MATH + CHEMISTRY + PHYSICAL) / 3;
-    if (GPA >= 8)
-    {
-        RANK = EXCELLENT;
-    }
-    else if (GPA >= 6.5)
-    {
-        RANK = GOOD;
-    }
-    else if (GPA >= 5)
-    {
-        RANK = AVERAGE;
-    }
-    else
-    {
-        RANK = BELOW_AVERAGE;
-    }
+    setMath(math);
+    setPhysical(physical);
+    setChemistry(chemistry);
+    setRank();
 }
 
-void Student::display()
-{
-    string tp;
-    switch (RANK)
-    {
-    case 0:
-        tp = "EXCELLENT";
-        break;
-    case 1:
-        tp = "GOOD";
-        break;
-    case 2:
-        tp = "AVERAGE";
-        break;
-    default:
-        tp = "BELOW AVERAGE";
-        break;
-    }
-
-    cout << "---------------------------------------" << endl;
-    cout << "------------           ----------------" << endl;
-    cout << "The name of student: " << NAME << endl;
-    cout << "ID of student: " << ID << endl;
-    cout << "Age of student: " << AGE << endl;
-    cout << "Sex of student: " << SEX << endl;
-    cout << "The math: " << MATH << endl;
-    cout << "The physical: " << PHYSICAL << endl;
-    cout << "The chemistry: " << CHEMISTRY << endl;
-    cout << "GPA: " << GPA << endl;
-    cout << "Rank: " << tp << endl;
-}
 int Student::getID()
 {
     return ID;
 }
 
+void Student::setName(string name)
+{
+    NAME = name;
+}
 string Student::getName()
 {
     return NAME;
 }
 
-double Student::getTB()
+void Student::setAge(int age)
 {
-    return GPA;
+    AGE = age;
+}
+int Student::getAge()
+{
+    return AGE;
 }
 
-void Student::editInf(string name, int age, string sex, double math, double physical, double chemistry)
+void Student::setMath(double math)
 {
-    NAME = name;
-    AGE = age;
-    SEX = sex;
     MATH = math;
-    CHEMISTRY = chemistry;
+    setRank();
+}
+double Student::getMath()
+{
+    return MATH;
+    setRank();
+}
+
+void Student::setPhysical(double physical)
+{
     PHYSICAL = physical;
-    GPA = (MATH + PHYSICAL + CHEMISTRY) / 3;
-    if (GPA >= 8)
+    setRank();
+}
+
+double Student::getPhysical()
+{
+    return PHYSICAL;
+}
+
+void Student::setChemistry(double chemistry)
+{
+    CHEMISTRY = chemistry;
+}
+double Student::getChemistry()
+{
+    return CHEMISTRY;
+}
+
+double Student::getGPA()
+{
+    return (MATH + PHYSICAL + CHEMISTRY) / 3;
+}
+
+TypeSex Student::getSex()
+{
+    return SEX;
+}
+void Student::setSex()
+{
+    if (getSex() == 0)
+    {
+        SEX = FEMALE;
+    }
+    else if(getSex()==1)
+    {
+        SEX = MALE;
+    }
+}
+TypeRank Student::getRank()
+{
+    return RANK;
+}
+
+void Student::setRank()
+{
+    if (getGPA() >= 8)
     {
         RANK = EXCELLENT;
     }
-    else if (GPA >= 6.5)
+    else if (getGPA() >= 6.5)
     {
         RANK = GOOD;
     }
-    else if (GPA >= 5)
+    else if (getGPA() >= 5)
     {
         RANK = AVERAGE;
     }
@@ -150,11 +169,12 @@ void Student::editInf(string name, int age, string sex, double math, double phys
     }
 }
 
-void addNewSv(list<Student> &database)
+
+void addSt(list<Student> &database)
 {
     string NAME;
     int AGE;
-    string SEX;
+    TypeSex SEX;
     double MATH;
     double PHYSICAL;
     double CHEMISTRY;
@@ -162,8 +182,7 @@ void addNewSv(list<Student> &database)
     do
     {
         cout << "Enter name: ";
-        fflush(stdin);
-        getline(cin, NAME);
+        cin >> NAME;
     } while (NAME == "\0");
 
     do
@@ -172,11 +191,14 @@ void addNewSv(list<Student> &database)
         cin >> AGE;
     } while (AGE <= 0);
 
+    int inputSex;
     do
     {
-        cout << "Enter sex(Male or Femail):";
-        cin >> SEX;
-    } while (SEX != "Male" && SEX != "male" && SEX != "Female" && SEX != "female");
+        cout << "Enter sex (0 = Female or 1 = Male):";
+        cin >> inputSex;
+        SEX = (TypeSex)inputSex;
+        break;
+    } while (inputSex != 0 || inputSex != 1);
 
     do
     {
@@ -196,93 +218,31 @@ void addNewSv(list<Student> &database)
         cin >> CHEMISTRY;
     } while (CHEMISTRY < 0 || CHEMISTRY > 10);
 
-    Student st(NAME, AGE, SEX, MATH, PHYSICAL, CHEMISTRY);
-    database.push_back(st);
+    Student St(NAME, AGE, SEX, MATH, PHYSICAL, CHEMISTRY);
+    database.push_back(St);
 
     cout << "\t\tStudent Add Successfully...." << endl;
 }
 
-void update(list<Student> &database)
+void delSt(list<Student> &database)
 {
-    int id;
-    string NAME;
-    int AGE;
-    string SEX;
-    double MATH;
-    double PHYSICAL;
-    double CHEMISTRY;
-
-    do
-    {
-        cout << "Enter id: ";
-        cin >> id;
-    } while (id < 100);
-
-    for (auto up = database.begin(); up != database.end(); up++)
-    {
-        if (up->getID() == id)
-        {
-            do
-            {
-                cout << "Enter name: ";
-                fflush(stdin);
-                getline(cin, NAME);
-            } while (NAME == "\0");
-
-            do
-            {
-                cout << "Enter age: ";
-                cin >> AGE;
-            } while (AGE <= 0);
-
-            do
-            {
-                cout << "Enter sex(Male or Femail): ";
-                cin >> SEX;
-            } while (SEX != "Male" && SEX != "male" && SEX != "Female" && SEX != "female");
-
-            do
-            {
-                cout << "Enter math: ";
-                cin >> MATH;
-            } while (MATH < 0 || MATH > 10);
-
-            do
-            {
-                cout << "Enter physical: ";
-                cin >> PHYSICAL;
-            } while (PHYSICAL < 0 || PHYSICAL > 10);
-
-            do
-            {
-                cout << "Enter chemistry: ";
-                cin >> CHEMISTRY;
-            } while (CHEMISTRY < 0 || CHEMISTRY > 10);
-            up->editInf(NAME, AGE, SEX, MATH, PHYSICAL, CHEMISTRY);
-            break;
-        }
-    }
-
-    cout << "\t\tNot found" << endl;
-}
-
-void delSv(list<Student> &database)
-{
-    int id;
+    int ID;
     int i = 0;
 
     do
     {
-        cout << "Nhap id: ";
-        cin >> id;
-    } while (id < 1000);
+        cout << "Enter ID: ";
+        cin >> ID;
+    } while (ID < 100);
 
     for (auto up = database.begin(); up != database.end(); up++)
     {
-        if (up->getID() == id)
+        if (up->getID() == ID)
         {
             database.erase(up);
             i++;
+            cout << "\t\tStudent Delete Successfully...." << endl;
+            break;
         }
     }
     if (i == 0)
@@ -290,40 +250,162 @@ void delSv(list<Student> &database)
         cout << "\t\tNot found" << endl;
     }
 }
+void display(list<Student> &database)
+{
+
+    for (auto &st : database)
+    {
+
+        cout << "---------------------------------------" << endl;
+        cout << "Name of Student: " << st.getName() << endl;
+        cout << "ID of Student: " << st.getID() << endl;
+        cout << "Age of Student: " << st.getAge() << endl;
+        if (st.getSex() == FEMALE)
+        {
+            cout << "Sex: Female" << endl;
+        }
+        else
+        {
+            cout << "Sex: Male" << endl;
+        }
+        cout << "Score of the math: " << st.getMath() << endl;
+        cout << "Score of the physical: " << st.getPhysical() << endl;
+        cout << "Score of the chemistry: " << st.getChemistry() << endl;
+        cout << "Score of the GPA: " << st.getGPA() << endl;
+        switch (st.getRank())
+        {
+        case EXCELLENT:
+            cout << "Rank of Student: EXCELLENT";
+            break;
+        case GOOD:
+            cout << "Rank of Student: GOOD";
+            break;
+        case AVERAGE:
+            cout << "Rank of Student: AVERAGE";
+            break;
+        case BELOW_AVERAGE:
+            cout << "Rank of Student: BELOW_AVERAGE";
+            break;
+        default:
+            cout << "Not rank";
+            break;
+        }
+        cout << endl;
+    }
+}
 
 void searchName(list<Student> &database)
 {
-    string name;
-    int i = 0;
-    do
+    string NAME;
+    cout << "Enter the name of student that you want to find: ";
+    cin >> NAME;
+    list<Student> find;
+    for (auto &st : database)
     {
-        cout << "Enter the name you want to find: ";
-        fflush(stdin);
-        getline(cin, name);
-    } while (name == "\0");
-
-    for (auto up = database.begin(); up != database.end(); up++)
-    {
-        if (up->getName() == name)
+        if (st.getName() == NAME)
         {
-            up->display();
-            i++;
+            find.push_back(st);
         }
     }
-    if (i == 0)
+    if (find.empty())
     {
-        cout << "\t\tNot found: " << name << endl;
+        cout << "Not found: " << NAME << endl;
+    }
+    else
+    {
+        display(find);
     }
 }
-void sortByName(list<Student>&database);
+// void sortByName(list<Student>&database);
 
-void sortByGPA();
-void displayList(list<Student> &database)
+// void sortByGPA();
+
+void update(list<Student> &database)
 {
-    for (Student stu : database)
+    int ID;
+    string NAME;
+    int AGE;
+    TypeSex SEX;
+    double MATH;
+    double PHYSICAL;
+    double CHEMISTRY;
+
+    do
     {
-        stu.display();
+        cout << "Enter ID: ";
+        cin >> ID;
+    } while (ID < 100);
+
+    for (auto st = database.begin(); st != database.end(); st++)
+    {
+        if (st->getID() == ID)
+        {
+            int choice;
+            char input;
+            do
+            {
+                system("cls");
+                int op;
+                cout << "\t\t------------------------------" << endl;
+                cout << "\t\t 1. Name of Student" << endl;
+                cout << "\t\t 2. Age of Student" << endl;
+                cout << "\t\t 3. Sex of Student" << endl;
+                cout << "\t\t 4. Math of Student" << endl;
+                cout << "\t\t 5. Physical of Student" << endl;
+                cout << "\t\t 6. Chemistry of Student" << endl;
+                cout << "\t\t 7. Display of Student List" << endl;
+                cout << "\t\t 8. Exit" << endl;
+                cout << "\t\t Enter Your Choice: ";
+                cin >> op;
+                switch (op)
+                {
+                case 1:
+                    cout << "Enter name: ";
+                    cin >> NAME;
+                    st->setName(NAME);
+                    break;
+                case 2:
+                    cout << "Enter age: ";
+                    cin >> AGE;
+                    st->setAge(AGE);
+                    break;
+                    //        case 3:
+                    //            int inputSex;
+                    //            cout << "Enter sex: ";
+                    //            cin>>inputSex;
+                    //            SEX=(TypeSex)inputSex;
+                    //            st->setSex(SEX);
+                    //            break;
+                case 4:
+                    cout << "Enter math: ";
+                    cin >> MATH;
+                    st->setMath(MATH);
+                    break;
+                case 5:
+                    cout << "Enter physical: ";
+                    cin >> PHYSICAL;
+                    st->setPhysical(PHYSICAL);
+                    break;
+                case 6:
+                    cout << "Enter chemistry: ";
+                    cin >> CHEMISTRY;
+                    st->setChemistry(CHEMISTRY);
+                    break;
+                case 7:
+                    display(database);
+                    break;
+                case 8:
+                    exit(1);
+                default:
+                    cout << "\t\tInvalid Number ...." << endl;
+                };
+                cout << "\t\tDo u want to Continue [1->8] ? :";
+                cin >> choice;
+            } while ((char)choice == 'Y' || (char)choice == 'y' || choice == 1 ||
+                     choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7 || choice == 8);
+        }
     }
+    cout << "\t\tNot found" << endl;
 }
 
 int main(int argc, char const *argv[])
@@ -350,7 +432,7 @@ int main(int argc, char const *argv[])
         switch (op)
         {
         case 1:
-            addNewSv(database);
+            addSt(database);
             break;
         case 2:
             update(database);
@@ -359,7 +441,7 @@ int main(int argc, char const *argv[])
             searchName(database);
             break;
         case 4:
-            delSv(database);
+            delSt(database);
             break;
             //        case 5:
             //       sortByName();
@@ -368,7 +450,7 @@ int main(int argc, char const *argv[])
             //        sortByGPA();
             break;
         case 7:
-            displayList(database);
+            display(database);
             break;
         case 8:
             exit(1);

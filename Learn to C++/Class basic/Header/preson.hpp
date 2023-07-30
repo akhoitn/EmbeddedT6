@@ -7,9 +7,9 @@ class Obj
 
 {
 private:
-    string Name;
-    int Age;
-    string Sex;
+    string Name; 
+    int Age;    
+    string Sex; 
     int ID;
     int *ptr;
 

@@ -275,11 +275,11 @@ int checkTable(vector<Table> &k_table)
             if (k_table[i].getNumberTable() == NUMBER_TABLE && k_table[i].getStatus() == false)
             {
                 k_table[i].setStatus(true);
-                return NUMBER_TABLE;
+               
             }
         }
     } while (NUMBER_TABLE <= 0 || NUMBER_TABLE > k_table.size());
-    
+    return NUMBER_TABLE;
 }
 
 void addFood(list<Dish> &menu, vector<Table> &k_table)
@@ -288,7 +288,7 @@ void addFood(list<Dish> &menu, vector<Table> &k_table)
     listMenuFood(menu);
     cout<<"---------------"<<endl;
     findFood(menu);
-    
+
     int QUANTITY;
     int ID;
     list<Dish>::iterator temp;

@@ -284,22 +284,22 @@ int checkTable(vector<Table> &k_table)
 
 void addFood(list<Dish> &menu, vector<Table> &k_table)
 {
+    
+    listMenuFood(menu);
+    cout<<"---------------"<<endl;
+    findFood(menu);
+    
     int QUANTITY;
     int ID;
     list<Dish>::iterator temp;
     vector<Table>::iterator tp;
     int op;
-    int choice;
 
-    do
-    {
         cout << "1. Add Food to Table" << endl;
         cout << "0. Back" << endl;
         cout << "Pls choice number: ";
         cin >> op;
-        switch (op)
-        {
-        case 1:
+        if(op == 1){
             cout << "Enter ID of Food: ";
             cin >> ID;
             cout << "Enter quantity: ";
@@ -312,15 +312,33 @@ void addFood(list<Dish> &menu, vector<Table> &k_table)
                         tp->setQuantity(QUANTITY);
                 }
             }
-            break;
-
-        default:
-            break;
         }
-
-        cin >> choice;
-    } while (choice == 1 || choice == 2);
 }
+
+// void changeFood(list<Dish> &menu, vector<Table> &k_table)
+// {
+//     int QUANTITY;
+//     int ID;
+//     list<Dish>::iterator temp;
+//     vector<Table>::iterator tp;
+//     int op;
+//     for(temp = menu.begin(); temp != menu.end(); temp++)
+//     {
+//         if(temp->getID() == ID)
+//         {
+//             cout<<"1. Change the food"<<endl;
+//             cout<<"0. Back"<<endl;
+//             cout<<"Pls choice number!!";
+//             cin >> op;
+//             if(op == 1)
+//             {
+                
+//             }
+//         }
+//     }
+
+  
+// }
 
 void menu2(list<Dish> &menu, vector<Table> &k_table)
 {

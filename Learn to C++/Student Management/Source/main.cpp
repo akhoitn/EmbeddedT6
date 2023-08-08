@@ -67,6 +67,9 @@ Student::Student(string name, int age, TypeSex sex, double math, double physical
     setPhysical(physical);
     setChemistry(chemistry);
     setRank();
+    assert((math >= 0 && math <= 10) && "Invalid math score");
+    assert((chemistry >= 0 && chemistry <= 10) && "Invalid chemistry score");
+    assert((physical >= 0 && physical <= 10) && "Invalid physical score");
 }
 
 int Student::getID()

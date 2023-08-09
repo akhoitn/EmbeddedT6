@@ -16,7 +16,7 @@ void checkTable(vector<Table> &k_table);
 void addFood(list<Dish> &menu, vector<Table> &k_table);
 // void changeFood(list<Dish> &menu, vector<Table> k_table);
 // void delFood(list<Dish> &menu, vector<Table> k_table);
-// void listFood(list<Dish> &menu, vector<Table> k_table);s
+void listFoodTable(list<Dish> &menu);
 // void bill(list<Dish> &menu, vector<Table> k_table);
 void menu2(list<Dish> &menu, vector<Table> &k_table);
 void Menu(list<Dish> &menu, vector<Table> &k_table);

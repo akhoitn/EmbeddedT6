@@ -320,7 +320,6 @@ void addFood(list<Dish> &menu)
     } while (QUANTITY < 0);
 
     cout << endl;
-    list<Dish> temp;
     for (auto &food : menu)
     {
         if (food.getID() == ID)

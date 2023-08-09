@@ -12,6 +12,7 @@
 #include <string>
 #include <list>
 #include <vector>
+#include "../Header/management.hpp"
 
 using namespace std;
 
@@ -22,9 +23,13 @@ private:
     int STT;
     int ID;
     int PRICE;
+    int QUANTITY;
 
 public:
     Dish(string name_food, int price);
+
+    void setQuantity(int quantity);
+    int getQuantity();
 
     int getID();
     int getSTT();
@@ -34,25 +39,20 @@ public:
 
     void setPrice(int price);
     int getPrice();
-
 };
 class Table
 {
 private:
     int NUMBER_TABLE;
     bool STATUS = false;
-    int QUANTITY = 0;
 
 public:
     Table(int number_table, bool status);
 
     int getNumberTable();
+
     bool setStatus(int status);
     bool getStatus();
-    void setQuantity(int quantity);
-    int getQuantity();
-
-    
 };
 
 #endif

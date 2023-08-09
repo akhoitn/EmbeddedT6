@@ -14,6 +14,15 @@ Dish::Dish(string name_food, int price)
     PRICE = price;
 }
 
+void Dish::setQuantity(int quantity)
+{
+    QUANTITY = quantity;
+}
+int Dish::getQuantity()
+{
+    return QUANTITY;
+}
+
 int Dish::getID()
 {
     return ID;
@@ -61,15 +70,6 @@ int Table::getNumberTable()
     return NUMBER_TABLE;
 }
 
-void Table::setQuantity(int quantity)
-{
-    QUANTITY = quantity;
-}
-int Table::getQuantity()
-{
-    return QUANTITY;
-}
-
 void listMenuFood(list<Dish> &menu)
 {
     for (auto &food : menu)
@@ -78,6 +78,23 @@ void listMenuFood(list<Dish> &menu)
         cout << "The ID of food: " << food.getID() << endl;
         cout << "The name of food: " << food.getNameFood() << endl;
         cout << "The price of food: " << food.getPrice() << endl;
+        cout << endl;
+    }
+}
+void listFoodTable(list<Dish> &menu)
+{
+    list<Dish> temp;
+    cout << "-----------------" << endl;
+    cout << "List Food of Table" << endl;
+
+    for (auto &temp : menu)
+    {
+
+        cout << "The ordinal number of food: " << temp.getSTT() << endl;
+        cout << "The ID of food: " << temp.getID() << endl;
+        cout << "The name of food: " << temp.getNameFood() << endl;
+        cout << "The price of food: " << temp.getPrice() << endl;
+        cout << "The quantity of food: " << temp.getQuantity() << endl;
         cout << endl;
     }
 }
@@ -275,71 +292,77 @@ int checkTable(vector<Table> &k_table)
             if (k_table[i].getNumberTable() == NUMBER_TABLE && k_table[i].getStatus() == false)
             {
                 k_table[i].setStatus(true);
-               
             }
         }
     } while (NUMBER_TABLE <= 0 || NUMBER_TABLE > k_table.size());
     return NUMBER_TABLE;
 }
 
-void addFood(list<Dish> &menu, vector<Table> &k_table)
+void addFood(list<Dish> &menu)
 {
-    
+    cout << "------------------" << endl;
     listMenuFood(menu);
-    cout<<"---------------"<<endl;
-    findFood(menu);
+    cout << "---------------" << endl;
 
     int QUANTITY;
     int ID;
-    list<Dish>::iterator temp;
-    vector<Table>::iterator tp;
-    int op;
+    list<Dish> temp;
+    do
+    {
+        cout << "Enter ID: ";
+        cin >> ID;
+    } while (ID < 100);
 
-        cout << "1. Add Food to Table" << endl;
-        cout << "0. Back" << endl;
-        cout << "Pls choice number: ";
-        cin >> op;
-        if(op == 1){
-            cout << "Enter ID of Food: ";
-            cin >> ID;
-            cout << "Enter quantity: ";
-            cin >> QUANTITY;
-            for (temp = menu.begin(); temp != menu.end(); temp++)
-            {
-                if (temp->getID() == ID)
-                {
-                    for (tp = k_table.begin(); tp != k_table.end(); tp++)
-                        tp->setQuantity(QUANTITY);
-                }
-            }
+    do
+    {
+        cout << "Enter quantity of food: ";
+        cin >> QUANTITY;
+    } while (QUANTITY < 0);
+
+    cout << endl;
+    list<Dish> temp;
+    for (auto &food : menu)
+    {
+        if (food.getID() == ID)
+        {
+            food.setQuantity(QUANTITY);
+            temp.push_back(food);
         }
+    }
+    listMenuFood(temp);
+    cout << endl;
+    listFoodTable(menu);
+    int op;
+    cout << "1. Add Food again" << endl;
+    cout << "0.Back" << endl;
+    cout << "Pls choice number: ";
+    cin >> op;
+    if (op == 1)
+    {
+        addFood(menu);
+    }
 }
 
-// void changeFood(list<Dish> &menu, vector<Table> &k_table)
-// {
-//     int QUANTITY;
+// void delFood(list<Dish>&menu) {
+//     list<Dish>temp;
 //     int ID;
-//     list<Dish>::iterator temp;
-//     vector<Table>::iterator tp;
-//     int op;
-//     for(temp = menu.begin(); temp != menu.end(); temp++)
+//     cout<<"------------------"<<endl;
+
+//     cout<<"Enter ID of food u want delete";
+//     cin >> ID;
+
+//     for(auto &food:menu)
 //     {
-//         if(temp->getID() == ID)
+//         if(food.getID() == ID )
 //         {
-//             cout<<"1. Change the food"<<endl;
-//             cout<<"0. Back"<<endl;
-//             cout<<"Pls choice number!!";
-//             cin >> op;
-//             if(op == 1)
-//             {
-                
-//             }
+//             temp.erase(food);
 //         }
+
 //     }
 
-  
 // }
 
+void bill(list<Dish> &menu, vector<Table> k_table);
 void menu2(list<Dish> &menu, vector<Table> &k_table)
 {
     int choice;
@@ -356,18 +379,47 @@ void menu2(list<Dish> &menu, vector<Table> &k_table)
         cout << "3. Delete Food" << endl;
         cout << "4. List Food" << endl;
         cout << "5. Bill" << endl;
-        cout << "0. Back" << endl;
+        cout << "0. Back (enter 9)" << endl;
         cout << "Pls choice !! ";
         cin >> op;
         switch (op)
         {
         case 1:
-            addFood(menu,k_table);
+            addFood(menu);
             break;
-
+        // case 3:
+        //     delFood(menu);
+        //     break;
         default:
             break;
         }
         cin >> choice;
-    } while (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5);
+    } while (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 0);
+}
+
+void Menu(list<Dish> &menu, vector<Table> &k_table)
+{
+    int tp;
+    int choice;
+    do
+    {
+        cout << "------------------------------------" << endl;
+        cout << "1. Management" << endl;
+        cout << "2. Employee" << endl;
+        cout << "Pls Choice Number: ";
+        cin >> tp;
+        switch (tp)
+        {
+        case 1:
+            menu1(menu, k_table);
+            break;
+        case 2:
+            menu2(menu, k_table);
+            break;
+        default:
+            cout << "ERROR!! Pls Choice Again" << endl;
+        };
+
+        cin >> choice;
+    } while (choice == 1 || choice == 2 || choice == 0 || choice == 9);
 }

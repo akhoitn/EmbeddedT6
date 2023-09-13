@@ -7,6 +7,6 @@
 
 void TIM2_INT_Init();
 
-void delayMs(int delayMilis);
+void delayMs (unsigned int itime);
 
 #endif

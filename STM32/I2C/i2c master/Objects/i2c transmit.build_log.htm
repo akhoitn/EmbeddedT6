@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.29.0.0
 Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: ANH KHOI, KHOI, LIC=----
+License Information: ANH KHOI, KHOI, LIC=D0D7S-LBMYC-BSTYX-HHEXQ-3NT0W-NAA28
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.29.0.0
@@ -21,53 +21,51 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-E:\Up\EmbeddedT6\Embedded\I2C\i2c master\i2c transmit.uvprojx
-Project File Date:  09/01/2023
+E:\Up\EmbeddedT6\STM32\I2C\i2c master\i2c transmit.uvprojx
+Project File Date:  09/13/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 assembling startup_stm32f10x_md.s...
-compiling system_stm32f10x.c...
+compiling main.c...
+Source\../Header/delay.h(8): warning:  #1295-D: Deprecated declaration TIM2_INT_Init - give arg types
+  void TIM2_INT_Init();
+Source\../Header/delay.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+Source\main.c(10): warning:  #1295-D: Deprecated declaration setOutputSDA - give arg types
+  void setOutputSDA();
+Source\main.c(11): warning:  #1295-D: Deprecated declaration setInputSDA - give arg types
+  void setInputSDA();
+Source\main.c(12): warning:  #1295-D: Deprecated declaration I2c_Master - give arg types
+  void I2c_Master();
+Source\main.c(13): warning:  #1295-D: Deprecated declaration setStatus - give arg types
+  void setStatus();
+Source\main.c(14): warning:  #1295-D: Deprecated declaration startCondition - give arg types
+  void startCondition();
+Source\main.c(15): warning:  #1295-D: Deprecated declaration endCondition - give arg types
+  void endCondition();
+Source\main.c(18): warning:  #1295-D: Deprecated declaration clock - give arg types
+  void clock();
+Source\main.c(19): warning:  #1295-D: Deprecated declaration config - give arg types
+  void config();
+Source\main.c: 10 warnings, 0 errors
+compiling delay.c...
+Source\../Header/delay.h(8): warning:  #1295-D: Deprecated declaration TIM2_INT_Init - give arg types
+  void TIM2_INT_Init();
+Source\../Header/delay.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+Source\delay.c(51): warning:  #1-D: last line of file ends without a newline
+  }
+Source\delay.c: 3 warnings, 0 errors
 compiling stm32f10x_gpio.c...
 compiling misc.c...
-compiling main.c...
-delay.h(8): warning:  #1295-D: Deprecated declaration TIM2_INT_Init - give arg types
-  void TIM2_INT_Init();
-delay.h(12): warning:  #1-D: last line of file ends without a newline
-  #endif
-main.c(10): warning:  #1295-D: Deprecated declaration setOutputSDA - give arg types
-  void setOutputSDA();
-main.c(11): warning:  #1295-D: Deprecated declaration setInputSDA - give arg types
-  void setInputSDA();
-main.c(12): warning:  #1295-D: Deprecated declaration I2c_Master - give arg types
-  void I2c_Master();
-main.c(13): warning:  #1295-D: Deprecated declaration setStatus - give arg types
-  void setStatus();
-main.c(14): warning:  #1295-D: Deprecated declaration startCondition - give arg types
-  void startCondition();
-main.c(15): warning:  #1295-D: Deprecated declaration endCondition - give arg types
-  void endCondition();
-main.c(18): warning:  #1295-D: Deprecated declaration clock - give arg types
-  void clock();
-main.c(19): warning:  #1295-D: Deprecated declaration config - give arg types
-  void config();
-main.c(20): warning:  #1295-D: Deprecated declaration check - give arg types
-  void check();
-main.c: 11 warnings, 0 errors
-compiling delay.c...
-delay.h(8): warning:  #1295-D: Deprecated declaration TIM2_INT_Init - give arg types
-  void TIM2_INT_Init();
-delay.h(12): warning:  #1-D: last line of file ends without a newline
-  #endif
-delay.c(49): warning:  #1-D: last line of file ends without a newline
-  }
-delay.c: 3 warnings, 0 errors
 compiling stm32f10x_rcc.c...
+compiling system_stm32f10x.c...
 compiling stm32f10x_tim.c...
 linking...
-Program Size: Code=2004 RO-data=268 RW-data=4 ZI-data=1636  
-".\Objects\i2c transmit.axf" - 0 Error(s), 14 Warning(s).
+Program Size: Code=1888 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\i2c transmit.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -99,17 +97,17 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
-      Source file:   Device\Source\system_stm32f10x.c
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
       Include file:  Device\StdPeriph_Driver\inc\misc.h
-      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Source file:   Device\StdPeriph_Driver\src\misc.c
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
@@ -120,8 +118,8 @@ Package Vendor: Keil
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
 
    * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

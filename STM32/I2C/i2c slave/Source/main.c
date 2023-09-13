@@ -1,10 +1,10 @@
-#include "delay.h"
+#include "../Header/delay.h"
 #include "stm32f10x.h"
 
-#define ADDRESS 0x5B
+#define ADDRESS 0x4D
 
-#define SCK GPIO_Pin_7
-#define SDA GPIO_Pin_8
+#define SCK GPIO_Pin_12
+#define SDA GPIO_Pin_15
 #define WIRTE 0
 
 void setOutputSDA();
@@ -29,6 +29,14 @@ int main() {
 	}
 }
 
+/*
+* Function: I2c_Slave
+* Description: Control, check, receive data from master
+* Input:
+	Nope
+* Output:
+	Nope
+*/
 void I2c_Slave() {
 	waitStart();
 	
@@ -64,14 +72,23 @@ void I2c_Slave() {
 	}else {}
 			
 }
-
+/*
+* Function: config
+* Description: This is configuration function for GPIO
+* Input:
+	Nope
+* Output:
+*  Nope
+*/
 void config () {
 	
+	//turn on clock for GPIOB, GPIOC
 	GPIO_InitTypeDef gpio;
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC, ENABLE);
 	
+	//Initialize GPIO
 	gpio.GPIO_Pin = SCK | SDA;
-	gpio.GPIO_Mode = GPIO_Mode_Out_PP;
+	gpio.GPIO_Mode = GPIO_Mode_IPU;
 	gpio.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOB, &gpio);
 	
@@ -81,14 +98,21 @@ void config () {
 	GPIO_Init(GPIOC, &gpio);
 }
 
-void ckeck() {
+void check() {
 	GPIO_ResetBits(GPIOC, GPIO_Pin_13);
 	delayMs(100);
 	GPIO_SetBits(GPIOC, GPIO_Pin_13);
 	delayMs(100);
 	
 }
-
+/*
+* Function: waitStart
+* Description: wait	for signal SCK and SDA from master
+* Input:
+	Nope
+* Output:
+	Nope
+*/
 void waitStart() {
 	
 	while(GPIO_ReadInputDataBit(GPIOB, SCK) == 1){
@@ -98,7 +122,14 @@ void waitStart() {
 		}
 	}
 }
-
+/*
+* Function: receiveAddress
+* Description: receive bit address form master 
+* Input:
+	Nope
+* Output:
+	Nope
+*/
 uint8_t receiveAddress () {
 	
 	uint8_t address =0;
@@ -111,7 +142,14 @@ uint8_t receiveAddress () {
 	
 	return address;
 }
-
+/*
+* Function: receiveData
+* Description: receive data form master 
+* Input:
+	Nope
+* Output:
+	Nope
+*/
 uint8_t receiveData () {
 	
 	uint8_t data =0;
@@ -124,15 +162,29 @@ uint8_t receiveData () {
 	
 	return data;
 }
-
+/*
+* Function: setOutputSDA
+* Description: use set mode output of GPIO
+* Input:
+	Nope
+* Output:
+	Nope
+*/
 void setOutputSDA () {
-	GPIOB ->CRL &= ~ (GPIO_CRH_MODE8 | GPIO_CRH_MODE8);
-	GPIOB->CRL |= GPIO_CRH_MODE8_0;
-	GPIOB->BSRR = GPIO_Pin_8;
+	GPIOB ->CRL &= ~ (GPIO_CRH_MODE15 | GPIO_CRH_MODE15);
+	GPIOB->CRL |= GPIO_CRH_MODE15_0;
+	GPIOB->BSRR = GPIO_Pin_15;
 }
-
+/*
+* Function: setInputSDA
+* Description: use set mode  input of GPIO
+* Input:
+	Nope
+* Output:
+	Nope
+*/
 void setInputSDA() {
-	GPIOB ->CRL &= ~ (GPIO_CRH_MODE8 | GPIO_CRH_MODE8);
-	GPIOB->CRL |= GPIO_CRH_MODE8_1;
-	GPIOB->BSRR = GPIO_Pin_8;
+	GPIOB ->CRL &= ~ (GPIO_CRH_MODE15 | GPIO_CRH_MODE15);
+	GPIOB->CRL |= GPIO_CRH_MODE15_1;
+	GPIOB->BRR = GPIO_Pin_15;
 }
